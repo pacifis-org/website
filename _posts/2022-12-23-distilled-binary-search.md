@@ -142,7 +142,7 @@ This follows from two observations:
 This snippet contains the logic for cutting our search interval in half, and to help us do that, we’ll use what we just discussed: the fact that after the `mid` calculation, `start <= mid < end`.
 We start comparing our reference (`numbers[mid]`) with the thing we are looking for (`target`):
 * If our reference is equal to what we are looking for, it means we’ve found it, so we return its index, `mid`
-* If we are looking for something bigger than the reference, we eliminate the part of the search space that is smaller than the reference by increasing the variable `start` to `mid + 1`. This is the first cut of the [Shrinking Interval GIF](https://www.pacifis.org/distilled-binary-search/#shrinking-interval).
+* If we are looking for something bigger than the reference, we eliminate the part of the search space that is smaller than the reference by increasing the variable `start` to `mid + 1`. This is the first cut of the [Shrinking Interval GIF](#shrinking-interval).
 
     I say increase, because `mid` is, at the lowest, equal to `start`, so adding one guarantees something bigger. The plus one also excludes the reference’s location(`mid`) from the updated search space, and we can safely do so because we verified that `numbers[mid]` isn’t equal to our `target`, so we don’t search there anymore.
 
