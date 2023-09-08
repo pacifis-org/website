@@ -4,7 +4,8 @@ title: 'Distilled: Binary Search'
 image:
   path: "/assets/img/distilled-binary-search/DistilledBinarySearchBanner.png"
 date: 2022-12-23 03:26 +0000
-tags: [Algorithms, Computer Science, Distilled]
+categories: [Distilled, Algorithms]
+tags: [distilled, algorithms, computer science]
 author: carlosgdcj
 ---
 Binary search is one of the classic algorithms in computer science, with its first implementation dating back to somewhere in the 1940s or 1950s.
