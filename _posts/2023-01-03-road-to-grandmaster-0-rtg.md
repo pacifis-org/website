@@ -2,7 +2,7 @@
 layout: post
 title: 'Road to Grandmaster #0: RTG'
 image:
-  path: "/assets/img/rtg0/RTGBanner.png"
+  path: "/assets/img/rtg0/RTG0Banner.png"
 date: 2023-01-03 12:47 +0000
 categories: [RTG, Kaggle]
 tags: [meta]
