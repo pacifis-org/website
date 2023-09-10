@@ -46,6 +46,30 @@ If you browse [any song](https://genius.com/Valiant-hearts-yonder-lyrics) on the
 They may convey some information about the lyrical structure, but as they can contain basically anything and not all songs have them, I decided to remove them.
 
 ## The language barrier
+Although I wasn't aware at first, the dataset contained lyrics in many languages.
+My idea was to work with English only, so a way to identify the language of a song was needed. 
+
+Of course, this couldn't be done manually for 5 million + songs, so I searched for some language identification methods and encountered [CLD3](https://github.com/google/cld3), which worked ok but appeared inconsistent in my tests.
+Slight changes to the input often made a big difference in the predicted language.
+
+```python
+>>> text = "I am at the Pizza Hut"
+>>> gcld3_model.FindLanguage(text=text).language
+'ca' # Catalan
+>>> text = "I'mm at the Pizza Hut"
+>>> gcld3_model.FindLanguage(text=text).language
+'en' # English
+>>> text = "I'm at the Pizza Hut"
+>>> gcld3_model.FindLanguage(text=text).language
+'mt' # Maltese
+```
+{: .nolineno}
+
+Then I encountered [FastText](https://github.com/facebookresearch/fastText/), which among other things, does language identification.
+It appeared to be more consistent than CLD3, but wasn't able to identify as many languages.
+In the end, I decided to combine their results, only labeling songs when both of the models agreed.
+
+## The language tag barrier
 Combining the results of the two models was pretty easy on paper.
 If they both said a song was written in Filipino, the language was marked as "Filipino".
 However, they don't say "Filipino" the same way.
