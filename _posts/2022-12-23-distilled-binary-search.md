@@ -2,7 +2,7 @@
 layout: post
 title: 'Distilled: Binary Search'
 image:
-  path: "/assets/img/distilled-binary-search/DistilledBinarySearchBanner.png"
+  path: "/assets/img/distilled-binary-search/DistilledBinarySearchBanner2.png"
 date: 2022-12-23 03:26 +0000
 categories: [Distilled, Algorithms]
 tags: [binary search, python]
