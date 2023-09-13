@@ -4,7 +4,7 @@ title: 'RTG #3: EDA on Yu-Gi-Oh!'
 date: 2023-03-21 20:31 +0000
 image:
   path: "/assets/img/rtg3/RTG3Banner.png"
-categories: [RTG, Kaggle]
+categories: [Kaggle, RTG]
 tags: [python, eda]
 author: carlosgdcj
 ---
