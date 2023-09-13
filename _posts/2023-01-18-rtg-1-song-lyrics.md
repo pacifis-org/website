@@ -4,7 +4,7 @@ title: 'RTG #1: Song lyrics'
 date: 2023-01-18 20:42 +0000
 image:
   path: "/assets/img/rtg1/RTG1Banner.png"
-categories: [RTG, Kaggle]
+categories: [Kaggle, RTG]
 tags: [python, nlp, clustering]
 author: carlosgdcj
 ---

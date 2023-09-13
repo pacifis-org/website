@@ -4,8 +4,8 @@ title: 'RTG #4: Doom vs Animal Crossing'
 date: 2023-04-19 18:51 +0000
 image:
   path: "/assets/img/rtg4/RTG4Banner.png"
-categories: [RTG, Kaggle, CV]
-tags: [python, classification, cnn]
+categories: [Kaggle, RTG]
+tags: [python, classification, computer vision]
 author: carlosgdcj
 ---
 
