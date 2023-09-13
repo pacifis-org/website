@@ -4,7 +4,7 @@ title: 'RTG #2: Titanic'
 date: 2023-02-09 23:20 +0000
 image:
   path: "/assets/img/rtg2/RTG2Banner.png"
-categories: [RTG, Kaggle]
+categories: [Kaggle, RTG]
 tags: [python, binary classification]
 author: carlosgdcj
 ---
