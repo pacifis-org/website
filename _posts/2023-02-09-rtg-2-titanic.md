@@ -5,7 +5,7 @@ date: 2023-02-09 00:00 +0000
 image:
   path: "/assets/img/rtg2/RTG2Banner.png"
 categories: [RTG, Kaggle]
-tags: [python, regression]
+tags: [python, binary classification]
 author: carlosgdcj
 ---
 
