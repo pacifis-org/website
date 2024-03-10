@@ -85,6 +85,20 @@ import adapter from '@sveltejs/adapter-static';
 ```
 {: file="svelte.config.js"}
 
+If your repository name is not `your-username.github.io`, as is the case in this example, you'll have to change another line in `svelte.config.js` to indicate that the deployed site will be served from `your-username.github.io/repository-name`. Create a `config.kit.paths.base` like the following:
+
+```javascript
+const config = {
+	kit: {
+		adapter: adapter(),
+		paths: {
+			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+		}
+	}
+};
+```
+{: file="svelte.config.js"}
+
 Now commit all your changes and push them to the GitHub repository.
 
 ```shell
@@ -185,7 +199,7 @@ jobs:
     
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+{% raw %}      url: ${{ steps.deployment.outputs.page_url }} {% endraw %}
     
     steps:
       - name: Deploy to GitHub Pages
@@ -195,7 +209,7 @@ jobs:
 {: file=".github/workflows/deploy_pages.yml"}
 
 This configuration file sets up two jobs: `build-site` and `deploy` and schedule them to run every time a push happens on the `main` branch.
-On the build-site job, if you are not using `pnpm`, you can delete the step called "Install pnpm" and then replace all occurrences of `pnpm` with `npm`.
+On the `build-site` job, if you are not using `pnpm`, you can delete the step called "Install pnpm" and then replace all occurrences of `pnpm` with `npm`. You can also change the versions to match what you expect to work with.
 
 After pasting the configuration, click **Commit changes** in the top right corner.
 The name of the file doesn't really matter, but I went with `deploy_pages.yml`.
