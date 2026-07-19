@@ -22,7 +22,7 @@ You do this repeatedly until you find what you’re looking for or run out of pl
 What maybe isn’t obvious at first glance, and the reason binary search is considered fast is that in order for it to run **one extra step**, you would have to **double** the number of things it has to consider.
 So, if it takes 3 steps to search among 8 possibilities, searching among 16 would take 4: in one step we discard half of the possibilities (8), and then we know that searching the other half (8) takes 3 steps.
 
-<a name="steps-vs-possibilities"></a>
+<span id="steps-vs-possibilities"></span>
 
 ![Steps vs Possibilities](/assets/img/distilled-binary-search/StepsVsPossibilities.png)
 
@@ -83,7 +83,7 @@ The index `start` is included in the range, and the index `end` isn’t (recall 
 When binary search cuts the search space in half, it will do so by changing these indexes.
 One cut in half is done by either increasing `start` or decreasing `end`.
 
-<a name="shrinking-interval"></a>
+<span id="shrinking-interval"></span>
 
 ![Shrinking interval](/assets/img/distilled-binary-search/ShrinkingInterval.gif)
 
@@ -118,7 +118,7 @@ This piece of code in the `while` loop is responsible for calculating the half p
 The half point is where our reference is located.
 Initially, we find out how far apart the `start` and `end` indexes are (in `distance`), then we go from `start` and walk half of `distance` to reach the `mid` point.
 
-<a name="mid-calculation"></a>
+<span id="mid-calculation"></span>
 
 ![Mid calculation](/assets/img/distilled-binary-search/MidCalculationHQ.gif)
 
@@ -189,7 +189,7 @@ This change in the loop condition alters the `mid` calculation property from `st
 Doing `end = mid` like we did before would result in our program getting stuck when `end` and `mid` are equal.
 To solve that we assign `mid - 1` to `end`, removing `mid` from the search space and guaranteeing that `end` always decreases.
 
-<a name="both-edges"></a>
+<span id="both-edges"></span>
 
 ![Both edges](/assets/img/distilled-binary-search/ShrinkingIntervalBothEdges.gif)
 
@@ -226,7 +226,7 @@ Remember that we are only dealing with whole numbers here.
 This property allows us to adjust the edges of the interval in a clean way that still guarantees that `start` (`end`) always increases (decreases) and that `mid` is always removed from the search space.
 The price we pay is the cursed initialization of `start` with a negative number and the non-intuitive loop condition.
 
-<a name="no-edges"></a>
+<span id="no-edges"></span>
 
 ![No edges](/assets/img/distilled-binary-search/ShrinkingIntervalNoEdges.gif)
 

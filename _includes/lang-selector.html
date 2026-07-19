@@ -1,0 +1,15 @@
+<!-- Language switcher for jekyll-polyglot -->
+<div class="lang-selector d-flex align-items-center" aria-label="Language selector">
+  <i class="fa-solid fa-globe me-1" aria-hidden="true"></i>
+  {% for tongue in site.languages %}
+    {% assign label = tongue | split: '-' | first | upcase %}
+    {% if tongue == site.active_lang %}
+      <span class="active" aria-current="true">{{ label }}</span>
+    {% elsif tongue == site.default_lang %}
+      <a {% static_href %}href="{{ site.baseurl }}{{ page.url }}"{% endstatic_href %}>{{ label }}</a>
+    {% else %}
+      <a {% static_href %}href="{{ site.baseurl }}/{{ tongue }}{{ page.url }}"{% endstatic_href %}>{{ label }}</a>
+    {% endif %}
+    {% unless forloop.last %}<span class="lang-separator mx-1">·</span>{% endunless %}
+  {% endfor %}
+</div>

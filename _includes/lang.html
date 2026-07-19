@@ -1,0 +1,16 @@
+{% comment %}
+  Detect appearance language and return it through variable "lang"
+
+  Overrides the theme's version for jekyll-polyglot: the UI language follows
+  the language the visitor selected (site.active_lang), so that even posts
+  falling back to the default language keep a localized layout.
+{% endcomment %}
+{% if site.data.locales[site.active_lang] %}
+  {% assign lang = site.active_lang %}
+{% elsif site.data.locales[page.lang] %}
+  {% assign lang = page.lang %}
+{% elsif site.data.locales[site.lang] %}
+  {% assign lang = site.lang %}
+{% else %}
+  {% assign lang = 'en' %}
+{% endif %}

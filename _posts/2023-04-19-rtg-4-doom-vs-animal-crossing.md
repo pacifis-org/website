@@ -47,7 +47,7 @@ Some things to consider with this approach are:
 * **Data augmentation**: I opted to do no data augmentation. A significant number of memes in the dataset have text, and the CNN has little to no hope of extracting anything other than some shapes from the text in the image. With a modest number of training samples, distorted images, and limited GPU hours, I decided not to make the network's job harder by flipping and cropping letters.
 
 ### Implementation
-[Pytorch Lightning]() was the tool of choice to implement everything, mostly because it handles moving tensors in/out of the GPU and it provides a painless way to train using multiple GPUs, which are present in some Kaggle notebooks. 
+[Pytorch Lightning](https://lightning.ai/docs/pytorch/stable/) was the tool of choice to implement everything, mostly because it handles moving tensors in/out of the GPU and it provides a painless way to train using multiple GPUs, which are present in some Kaggle notebooks. 
 
 Having used TensorFlow, I was familiar with the [`flow_from_directory`](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator#flow_from_directory) function to deal with datasets that had an image folder with subfolders for each class. I wasn't aware, however, of the Pytorch equivalent: ImageFolder (later I found out that the real equivalent was [`folder_dataset.ImageFolder`](https://www.tensorflow.org/datasets/api_docs/python/tfds/folder_dataset/ImageFolder))
 

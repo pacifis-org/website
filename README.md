@@ -34,6 +34,34 @@ $ bundle
 
 Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
 
+## Languages (English / Portuguese)
+
+The site is bilingual via [jekyll-polyglot](https://github.com/untra/polyglot). English is the
+default language and lives at the site root; Portuguese is served under `/pt-BR/`. Posts without
+a Portuguese version automatically fall back to the English content (with a Portuguese UI).
+
+To translate a post, copy it to `_posts/pt-BR/` **keeping the exact same file name** (that is what
+links the two versions and keeps the URL stable), then translate the content and front matter
+`title`/`description`:
+
+```
+_posts/2023-02-09-rtg-2-titanic.md        # English
+_posts/pt-BR/2023-02-09-rtg-2-titanic.md  # Portuguese
+```
+
+The same applies to tabs, e.g. `_tabs/pt-BR/about.md` translates the About page.
+
+The pieces that make this work (they shadow the theme gem's files, so revisit them when
+upgrading the theme):
+
+- `_config.yml` — `languages`, `default_lang`, and other polyglot settings
+- `_includes/lang-selector.html` — the EN · PT switcher
+- `_includes/sidebar.html` — includes the switcher in the sidebar bottom
+- `_includes/lang.html` — makes UI strings follow the selected language
+- `_includes/metadata-hook.html` — SEO `hreflang` alternate links
+- `_layouts/default.html` — sets the `<html lang>` attribute per language
+- `assets/css/jekyll-theme-chirpy.scss` — switcher styling
+
 ## License
 
 This work is published under [MIT][mit] License.
